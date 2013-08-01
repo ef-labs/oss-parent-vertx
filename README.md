@@ -1,5 +1,5 @@
-# Englishtown etown-vertx-parent
-This should be the parent pom for Englishtown internal vertx maven projects.
+# Englishtown oss-parent-vertx
+This should be the parent pom for Englishtown OSS vert.x maven projects.
 
 
 ## Configuration
@@ -76,4 +76,5 @@ mvn clean deploy
 
 ### jgitflow
 mvn jgitflow:release-start
+
 mvn jgitflow:release-finish
