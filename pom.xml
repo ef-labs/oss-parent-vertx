@@ -4,7 +4,7 @@
 
     <groupId>com.englishtown</groupId>
     <artifactId>oss-parent-vertx</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <packaging>pom</packaging>
 
     <parent>
@@ -24,8 +24,8 @@
         <module.name>${project.groupId}~${project.artifactId}~${project.version}</module.name>
 
         <!--Dependency versions-->
-        <vertx.version>2.0.0-final</vertx.version>
-        <vertx.testtools.version>2.0.0-final</vertx.testtools.version>
+        <vertx.version>2.0.1-final</vertx.version>
+        <vertx.testtools.version>2.0.1-final</vertx.testtools.version>
 
         <!--Plugin versions-->
         <maven.vertx.plugin.version>2.0.0-final</maven.vertx.plugin.version>
@@ -206,7 +206,7 @@
     <scm>
         <connection>scm:git:https://github.com/englishtown/${project.artifactId}.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/englishtown/${project.artifactId}.git</developerConnection>
-        <tag>1.1.0</tag>
+        <tag>1.2.0</tag>
         <url>https://github.com/englishtown/${project.artifactId}</url>
     </scm>
 
