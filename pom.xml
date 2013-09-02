@@ -4,7 +4,7 @@
 
     <groupId>com.englishtown</groupId>
     <artifactId>oss-parent-vertx</artifactId>
-    <version>1.2.0-SNAPSHOT</version>
+    <version>1.2.0</version>
     <packaging>pom</packaging>
 
     <parent>
@@ -206,7 +206,7 @@
     <scm>
         <connection>scm:git:https://github.com/englishtown/${project.artifactId}.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/englishtown/${project.artifactId}.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>1.2.0</tag>
         <url>https://github.com/englishtown/${project.artifactId}</url>
     </scm>
 
