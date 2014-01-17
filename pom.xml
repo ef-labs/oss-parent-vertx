@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.englishtown</groupId>
@@ -162,12 +163,31 @@
                     <artifactId>vertx-maven-plugin</artifactId>
                     <version>${maven.vertx.plugin.version}</version>
                     <!--
-                    You can specify a configFile and number of instances to run for the runMod task here if you want
+                    You can specify extra config to the plugin as required here
                     <configuration>
                        <configFile>/path/to/MyVerticle.conf</configFile>
                        <instances>1</instances>
+                       <classpath>src/main/resources/:src/test/resources/:target/classes/:target/test-classes/</classpath>
                     </configuration>
                     -->
+                    <!-- Make sure that the plugin uses the vert.x versions from this pom.xml not from its own pom.xml -->
+                    <dependencies>
+                        <dependency>
+                            <groupId>io.vertx</groupId>
+                            <artifactId>vertx-platform</artifactId>
+                            <version>${vertx.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>io.vertx</groupId>
+                            <artifactId>vertx-core</artifactId>
+                            <version>${vertx.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>io.vertx</groupId>
+                            <artifactId>vertx-hazelcast</artifactId>
+                            <version>${vertx.version}</version>
+                        </dependency>
+                    </dependencies>
                     <executions>
                         <execution>
                             <id>pullInDeps</id>
