@@ -67,6 +67,47 @@
 
     <build>
         <plugins>
+            <!-- The vert.x Maven plugin -->
+            <plugin>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-maven-plugin</artifactId>
+                <version>${maven.vertx.plugin.version}</version>
+                <!--
+                You can specify extra config to the plugin as required here
+                <configuration>
+                   <configFile>/path/to/MyVerticle.conf</configFile>
+                   <instances>1</instances>
+                   <classpath>src/main/resources/:src/test/resources/:target/classes/:target/test-classes/</classpath>
+                </configuration>
+                -->
+                <!-- Make sure that the plugin uses the vert.x versions from this pom.xml not from its own pom.xml -->
+                <dependencies>
+                    <dependency>
+                        <groupId>io.vertx</groupId>
+                        <artifactId>vertx-platform</artifactId>
+                        <version>${vertx.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>io.vertx</groupId>
+                        <artifactId>vertx-core</artifactId>
+                        <version>${vertx.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>io.vertx</groupId>
+                        <artifactId>vertx-hazelcast</artifactId>
+                        <version>${vertx.version}</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>pullInDeps</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>pullInDeps</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -157,47 +198,6 @@
 
         <pluginManagement>
             <plugins>
-                <!-- The vert.x Maven plugin -->
-                <plugin>
-                    <groupId>io.vertx</groupId>
-                    <artifactId>vertx-maven-plugin</artifactId>
-                    <version>${maven.vertx.plugin.version}</version>
-                    <!--
-                    You can specify extra config to the plugin as required here
-                    <configuration>
-                       <configFile>/path/to/MyVerticle.conf</configFile>
-                       <instances>1</instances>
-                       <classpath>src/main/resources/:src/test/resources/:target/classes/:target/test-classes/</classpath>
-                    </configuration>
-                    -->
-                    <!-- Make sure that the plugin uses the vert.x versions from this pom.xml not from its own pom.xml -->
-                    <dependencies>
-                        <dependency>
-                            <groupId>io.vertx</groupId>
-                            <artifactId>vertx-platform</artifactId>
-                            <version>${vertx.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>io.vertx</groupId>
-                            <artifactId>vertx-core</artifactId>
-                            <version>${vertx.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>io.vertx</groupId>
-                            <artifactId>vertx-hazelcast</artifactId>
-                            <version>${vertx.version}</version>
-                        </dependency>
-                    </dependencies>
-                    <executions>
-                        <execution>
-                            <id>pullInDeps</id>
-                            <phase>prepare-package</phase>
-                            <goals>
-                                <goal>pullInDeps</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
