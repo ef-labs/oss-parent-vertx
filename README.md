@@ -1,5 +1,5 @@
 # Englishtown oss-parent-vertx
-This should be the parent pom for Englishtown OSS vert.x maven projects.
+This should be the parent pom for Englishtown OSS vert.x 3.x maven projects.
 
 
 ## Configuration
@@ -11,7 +11,7 @@ Add the following to your pom:
     <parent>
         <groupId>com.englishtown</groupId>
         <artifactId>oss-parent-vertx</artifactId>
-        <version>1.4.0-SNAPSHOT</version>
+        <version>2.0.0-SNAPSHOT</version>
     </parent>
 ```
 
@@ -46,6 +46,7 @@ This cannot be added in the parent due to this issue: http://jira.codehaus.org/b
 
 ### Maven plugins
 
+_Note: Currently unavailable for vert.x 3_
 ```xml
     <build>
         <plugins>
