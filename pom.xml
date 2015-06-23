@@ -4,7 +4,7 @@
 
     <groupId>com.englishtown.vertx</groupId>
     <artifactId>oss-parent-vertx</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
     <packaging>pom</packaging>
 
     <parent>
@@ -14,7 +14,7 @@
     </parent>
 
     <properties>
-        <vertx.version>3.0.0-milestone2</vertx.version>
+        <vertx.version>3.0.0</vertx.version>
         <maven.shade.plugin.version>2.3</maven.shade.plugin.version>
     </properties>
 
@@ -123,7 +123,7 @@
                                     <excludes>
                                     </excludes>
                                 </artifactSet>
-                                <outputFile>${project.build.directory}/${artifactId}-${version}-fat.jar</outputFile>
+                                <outputFile>${project.build.directory}/${project.artifactId}-${project.version}-fat.jar</outputFile>
                             </configuration>
                         </execution>
                     </executions>
