@@ -10,14 +10,13 @@
     <parent>
         <groupId>com.englishtown</groupId>
         <artifactId>oss-parent</artifactId>
-        <version>2.0.0</version>
+        <version>2.1.0</version>
     </parent>
 
     <properties>
-        <vertx.version>3.1.0</vertx.version>
+        <vertx.version>3.3.0</vertx.version>
         <junit.version>4.12</junit.version>
-        <mockito.version>1.10.19</mockito.version>
-        <maven.shade.plugin.version>2.3</maven.shade.plugin.version>
+        <maven.shade.plugin.version>2.4.3</maven.shade.plugin.version>
     </properties>
 
     <dependencies>
@@ -104,7 +103,7 @@
                                             Then specify the Main-Class as io.vertx.core.Starter and the Main-Verticle as the verticle
                                             you want to run, as follows:
                                             -->
-                                            <Main-Class>io.vertx.core.Starter</Main-Class>
+                                            <Main-Class>io.vertx.core.Launcher</Main-Class>
 
                                             <!-- Add Main-Verticle
                                             <Main-Verticle>js:javascript/app.js</Main-Verticle>
